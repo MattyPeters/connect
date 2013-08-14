@@ -17,6 +17,8 @@ echo 'Could not user database ' . DB_NAME . '\n';
 echo mysql_error() . '\n';
 exit;
 }
+mysql_select_db("winestore");
+
 echo 'Connected to database ' . DB_NAME . '\n';
 ?>
 
