@@ -33,10 +33,9 @@ echo 'Connected to database ' . DB_NAME . '\n';
 <select name="tableName">
 <?php
 $result = mysql_query("SELECT region_name FROM region");
-while ($row = mysql_fetch_row($result)) {
-   for ($i = 0; $i < mysql_num_fields($result); $i++) {
+while ($row = mysql_fetch_array($result)) {
       
-      echo '<option value="$row[i]">$row[i]</option>';
+      echo '<option value="$row['region_id']">$row['region_id']</option>';
    }
 }
 
@@ -76,23 +75,6 @@ while ($row = mysql_fetch_row($result)) {
 <br>
 <input type="submit" value="Search">
 
-<php 
 
-// (2) Run the query on the winestore through the connection
-  $query = "SELECT * FROM wine";
-  $result = mysql_query($query);
-
-  // Start the HTML body, and output preformatted text
-  echo "<pre>\n";
-
-  // (3) While there are still rows in the result set
-  while ($row = mysql_fetch_row($result)) {
-   for ($i = 0; $i < mysql_num_fields($result); $i++) {
-      echo $row[$i] . " ";
-   }
-   // Print a carriage return to neaten the output
-   echo "\n";
-  }
-  ?>
 </body>
 </html>
