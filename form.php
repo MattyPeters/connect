@@ -33,7 +33,7 @@ echo 'Connected to database ' . DB_NAME . '\n';
 <select name="tableName">
 <?php
 $result = mysql_query("SELECT region_name FROM region");
-print $result;
+
 while ($row = mysql_fetch_array($result)) {
       
       echo '<option value="$row["region_id"]>$row["region_id"]</option>';
@@ -76,6 +76,7 @@ while ($row = mysql_fetch_array($result)) {
 <br>
 <input type="submit" value="Search">
 
+<php print $result; >?
 
 </body>
 </html>
