@@ -16,6 +16,9 @@ exit;
 
 mysql_select_db("winestore");
 
+$query = "SELECT * FROM wine";
+$result = mysql_query($query, $connection);
+
 
 ?>
 </head>
@@ -33,6 +36,7 @@ mysql_select_db("winestore");
 <br> Choose Wine Region <br>
 <select value="tableName">
 <?php
+$result = "SELECT * FROM wine";
 while($row = mysql_fetch_row($result)) {
 $tableName = $row[0];
 echo '<option value="$tableName">$tableName</option>';
