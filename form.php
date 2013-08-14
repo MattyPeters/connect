@@ -40,7 +40,7 @@ while ($row = mysql_fetch_row($result)) {
    }
 }
 
-echo $result;
+
 ?>
 </select>
 <br> Choose Grape Variety <br>         
@@ -76,5 +76,6 @@ echo $result;
 <br>
 <input type="submit" value="Search">
 
+<php echo $result; ?>
 </body>
 </html>
