@@ -80,7 +80,7 @@ while ($row = mysql_fetch_row($result)) {
 
 // (2) Run the query on the winestore through the connection
   $query = "SELECT * FROM wine";
-  $result = mysql_query($query, $connection);
+  $result = mysql_query($query);
 
   // Start the HTML body, and output preformatted text
   echo "<pre>\n";
