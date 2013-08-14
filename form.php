@@ -30,20 +30,20 @@ echo 'Connected to database ' . DB_NAME . '\n';
 <br> Enter a Winery Name <br>
 <input type="text" name="WineryName" Value = "All">
 <br> Choose Wine Region <br>
-<select name="tableName">
+
 <?php
 $region = mysql_query("SELECT region_name FROM region");
 
-for (i=0; i < mysql_num_rows($region); i++ ) {
-      $row = mysql_fetch_array($region[0]);
-      
-      echo '<option value="$row">$row</option>';
+while ($row = mysql_fetch_row($region)) {
+   for ($i = 0; $i < mysql_num_fields($result); $i++) {
+      echo $row[$i] 
    }
-
+  
+  }
 
 
 ?>
-</select>
+
 <br> Choose Grape Variety <br>         
 <select name="Grape_Type">
 
