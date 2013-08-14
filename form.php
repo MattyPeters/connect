@@ -1,5 +1,10 @@
 <html>
 <head>
+
+</head>
+
+<body>
+
 <php
 
 require_once('db.php');
@@ -21,11 +26,6 @@ echo "help!";
 
 
 ?>
-</head>
-
-<body>
-
-
 
 
 <form action = "#" method= "GET">
