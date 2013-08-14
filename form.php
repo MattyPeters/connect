@@ -34,9 +34,10 @@ echo 'Connected to database ' . DB_NAME . '\n';
 <?php
 $region = mysql_query("SELECT region_name FROM region");
 
-while ($row = mysql_fetch_array($region)) {
+for (i=0; i < mysql_num_rows($region); i++ ) {
+      $row = mysql_fetch_array($region[0]);
       
-      echo '<option value="$row["region_id"]>$row["region_id"]</option>';
+      echo '<option value="$row">$row</option>';
    }
 
 
@@ -45,17 +46,7 @@ while ($row = mysql_fetch_array($region)) {
 </select>
 <br> Choose Grape Variety <br>         
 <select name="Grape_Type">
-         <?php
-$variety = mysql_query("SELECT id FROM wine_variety");
 
-while ($row = mysql_fetch_array($varity)) {
-      
-      echo '<option value="$row["region_id"]>$row["region_id"]</option>';
-   }
-
-
-
-?>
          </select>
 <br> The range of years <br>         
 <select name="LowerYears">
