@@ -16,6 +16,7 @@ exit;
 
 mysql_select_db("winestore");
 
+echo "help!";
 
 
 
