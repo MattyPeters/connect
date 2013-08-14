@@ -38,7 +38,7 @@ while ($row = mysql_fetch_row($result)) {
       
       echo '<option value="$row[i]">$row[i]</option>';
    }
-
+}
 
 ?>
 </select>
