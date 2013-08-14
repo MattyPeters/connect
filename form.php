@@ -1,9 +1,5 @@
 <html>
 <head>
-</head>
-
-<body>
-
 <php
 
 require_once('db.php');
@@ -21,6 +17,11 @@ mysql_select_db("winestore");
 
 echo 'Connected to database ' . DB_NAME . '\n';
 ?>
+</head>
+
+<body>
+
+
 
 
 <form action = "#" method= "GET">
