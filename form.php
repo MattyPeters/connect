@@ -40,7 +40,7 @@ while ($row = mysql_fetch_row($result)) {
    }
 }
 
-print_r($result):
+echo $result;
 ?>
 </select>
 <br> Choose Grape Variety <br>         
