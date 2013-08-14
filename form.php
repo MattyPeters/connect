@@ -13,6 +13,7 @@ echo 'Could not user database ' . DB_NAME . '\n';
 echo mysql_error() . '\n';
 exit;
 }
+
 mysql_select_db("winestore");
 
 
@@ -30,14 +31,14 @@ mysql_select_db("winestore");
 <br> Enter a Winery Name <br>
 <input type="text" name="WineryName" Value = "All">
 <br> Choose Wine Region <br>
-<select name="WineRegion">
-         <?php
-		while($row = mysql_fetch_row($result)) {
-			$tableName = $row[0];
-			echo '<option value="$tableName">$tableName</option>';
-			}
-		 ?>
-         </select>
+<select value="tableName">
+<?php
+while($row = mysql_fetch_row($result)) {
+$tableName = $row[0];
+echo '<option value="$tableName">$tableName</option>';
+}
+?>
+</select>
 <br> Choose Grape Variety <br>         
 <select name="Grape_Type">
            <option value="?">?
