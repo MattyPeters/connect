@@ -35,7 +35,7 @@ echo 'Connected to database ' . DB_NAME . '\n';
 $region = mysql_query("SELECT region_name FROM region");
 
 while ($row = mysql_fetch_row($region)) {
-   for ($i = 0; $i < mysql_num_fields($result); $i++) {
+   for ($i = 0; $i < mysql_num_fields($region); $i++) {
       echo $row[$i] 
    }
   
