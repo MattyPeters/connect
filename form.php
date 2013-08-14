@@ -33,10 +33,13 @@ echo 'Connected to database ' . DB_NAME . '\n';
 <select name="tableName">
 <?php
 $result = mysql_query("SELECT region_name FROM region");
-while($row = mysql_fetch_row($result)) {
-$tableName = $row[0];
-echo '<option value="$tableName">$tableName</option>';
-}
+while ($row = mysql_fetch_row($result)) {
+   for ($i = 0; $i < mysql_num_fields($result); $i++) {
+      
+      echo '<option value="$row[i]">$row[i]</option>';
+   }
+
+
 ?>
 </select>
 <br> Choose Grape Variety <br>         
