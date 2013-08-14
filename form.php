@@ -46,7 +46,7 @@ while ($row = mysql_fetch_array($region)) {
 <br> Choose Grape Variety <br>         
 <select name="Grape_Type">
          <?php
-$variety = mysql_query("SELECT variety_id FROM wine_variety");
+$variety = mysql_query("SELECT id FROM wine_variety");
 
 while ($row = mysql_fetch_array($varity)) {
       
