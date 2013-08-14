@@ -76,6 +76,23 @@ while ($row = mysql_fetch_row($result)) {
 <br>
 <input type="submit" value="Search">
 
-<php echo "$result"; ?>
+<php 
+
+// (2) Run the query on the winestore through the connection
+  $query = "SELECT * FROM wine";
+  $result = mysql_query($query, $connection);
+
+  // Start the HTML body, and output preformatted text
+  echo "<pre>\n";
+
+  // (3) While there are still rows in the result set
+  while ($row = mysql_fetch_row($result)) {
+   for ($i = 0; $i < mysql_num_fields($result); $i++) {
+      echo $row[$i] . " ";
+   }
+   // Print a carriage return to neaten the output
+   echo "\n";
+  }
+  ?>
 </body>
 </html>
