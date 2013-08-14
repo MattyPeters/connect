@@ -76,7 +76,7 @@ while ($row = mysql_fetch_array($result)) {
 <br>
 <input type="submit" value="Search">
 
-<php print $result; ?>
+<php echo '$result'; ?>
 
 </body>
 </html>
