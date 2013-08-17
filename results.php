@@ -20,9 +20,9 @@ $maxcost = $_GET['Maxcost'];
 $query = "SELECT wine_name, variety, year, winery_name, region_name, cost, on_hand
 FROM winery, region, wine, grape_variety, inventory, wine_variety
 WHERE winery.region_id = region.region_id
-AND wine.winery_id = winery.winery_id"
-AND wine.wine_id = inventory.wine_id"
-AND wine.wine_id = wine_variety.wine_id"
+AND wine.winery_id = winery.winery_id
+AND wine.wine_id = inventory.wine_id
+AND wine.wine_id = wine_variety.wine_id
 AND grape_variety.variety_id = wine_variety.variety_id";
 
 $result = mysql_query($query);
