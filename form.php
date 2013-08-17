@@ -71,9 +71,22 @@ while ($typerow = mysql_fetch_array($type)){
          </select>
 <br> The range of years <br>         
 <select name="LowerYears">
-           <option value="?">?l
-           <option value="?2">?2l
-           <option value="?3">?3l
+          <?php
+$year = mysql_query("SELECT distinct year FROM wine group by year asc");
+
+
+while ($yearrow = mysql_fetch_array($year)){
+
+?>
+<option value="$typerow['variety']"><?php echo $yearrow['year']; ?></option>
+
+<?php
+
+}
+
+
+
+?>
          </select>
 <select name="Upperyears">
            <option value="?u">?u
