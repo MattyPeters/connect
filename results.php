@@ -42,8 +42,8 @@ AND wine.winery_id = winery.winery_id
 AND wine.wine_id = inventory.wine_id
 AND wine.wine_id = wine_variety.wine_id
 AND grape_variety.variety_id = wine_variety.variety_id
-AND year >= $lowyear
-AND year <= $upyear";
+AND year >= $lowyear && year <= $upyear";
+
 
 
 if (isset($winery) && $winename != "All") {
