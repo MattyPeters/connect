@@ -29,6 +29,9 @@ $maxqty = $_GET['Maxqty'];
 $mincost = $_GET['Mincost'];
 $maxcost = $_GET['Maxcost'];
 
+results();
+
+function results{
 
 $query = "SELECT wine_name, variety, year, winery_name, region_name, cost, on_hand
 FROM winery, region, wine, grape_variety, inventory, wine_variety
@@ -38,12 +41,13 @@ AND wine.wine_id = inventory.wine_id
 AND wine.wine_id = wine_variety.wine_id
 AND grape_variety.variety_id = wine_variety.variety_id";
 
+/*
 if (isset($winename) && $winname != "All") {
     $query .= " AND wine_name = '{$winename}'";}
     
 if (isset($winery) && $winery != "All") {
     $query .= " AND winery_name = '{$winery}'";}
-/*
+
 if (isset($region) && $region != "All") {
     $query .= " AND region_id = '{$region}'";}
 
@@ -97,6 +101,7 @@ $result = mysql_query($query);
       // Finish the <table>
       print "\n</table>";
 
+}
 ?>
 
 
