@@ -1,7 +1,7 @@
 <html>
 <head>
 
-<php
+<?php
 function showresults {
 
 $query = "SELECT wine_name, variety, year, winery_name, region_name, cost, on_hand
@@ -14,13 +14,6 @@ AND grape_variety.variety_id = wine_variety.variety_id";
 
 $result = mysql_query($query);
 
- $rowsFound = @ mysql_num_rows($result);
-
-    // If the query has results ...
-    
-    $rowsFound = @ mysql_num_rows($result);
-    if ($rowsFound > 0) {
-      // ... print out a header
       print "Wines of $regionName<br>";
 
       // and start a <table>.
