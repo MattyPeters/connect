@@ -53,7 +53,7 @@ if (isset($winery) && $winery != "All") {
 
 if (isset($region) && $region != "All") {
     $query .= " AND region_id = '{$region}'";}
-
+/* 
 if (isset($type) && $type != "All") {
     $query .= " AND variety = '{$type}'";}
 
@@ -62,7 +62,7 @@ if (isset($lowyear))  {
     
 if (isset($upyear))  {
     $query .= " AND year <= '{$upyear}'";}
-/* 
+
 if (isset($minqty))  {
     $query .= " AND on_hand >= '{$minqty}'";}
     
