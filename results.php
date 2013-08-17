@@ -41,7 +41,7 @@ AND wine.wine_id = inventory.wine_id
 AND wine.wine_id = wine_variety.wine_id
 AND grape_variety.variety_id = wine_variety.variety_id";
 
-/*
+
 if (isset($winename) && $winname != "All") {
     $query .= " AND wine_name = '{$winename}'";}
     
@@ -50,7 +50,7 @@ if (isset($winery) && $winery != "All") {
 
 if (isset($region) && $region != "All") {
     $query .= " AND region_id = '{$region}'";}
-*/
+/*
 if (isset($type) && $type != "All") {
     $query .= " AND variety = '{$type}'";}
 
@@ -72,7 +72,7 @@ if (isset($mincost))  {
 if (isset($maxcost))  {
     $query .= " AND cost <= '{$maxcost}'";}
 
-
+*/
 $result = mysql_query($query);
 
       print "Wines of $regionName<br>";
