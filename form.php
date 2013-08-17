@@ -32,7 +32,7 @@ echo 'Connected to database ' . DB_NAME . '\n';
 <br> Choose Wine Region <br>
 <select name = "Region">
 <?php
-$region = mysql_query("SELECT region_name FROM region");
+$region = mysql_query("SELECT region_name, region_id FROM region");
 
 
 
@@ -45,7 +45,7 @@ while($row=mysql_fetch_array($region))
 
 
 ?>
-</select>
+
 <br> Choose Grape Variety <br>         
 <select name="Grape_Type">
 
