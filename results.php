@@ -95,6 +95,7 @@ $result = mysql_query($query);
         print "\n<tr>\n\t<td>{$row["wine_name"]}</td>" .
             "\n\t<td>{$row["variety"]}</td>" .
             "\n\t<td>{$row["year"]}</td>" .
+            "\n\t<td>{$row["region_id"]}</td>" .
             "\n\t<td>{$row["winery_name"]}</td>" .
                "\n\t<td>{$row["region_name"]}</td>" .
                   "\n\t<td>{$row["cost"]}</td>" .
