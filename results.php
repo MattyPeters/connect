@@ -18,6 +18,12 @@ echo 'Connected to database ' . DB_NAME . '\n';
 <body>
 <?php
 
+
+
+results();
+
+function results(){
+
 $winename = $_GET['WineName'];
 $winery = $_GET['WineryName'];
 $region = $_GET['Region'];
@@ -29,10 +35,6 @@ $maxqty = $_GET['Maxqty'];
 $mincost = $_GET['Mincost'];
 $maxcost = $_GET['Maxcost'];
 
-results();
-
-function results(){
-
 $query = "SELECT wine_name, variety, year, winery_name, region_name, cost, on_hand
 FROM winery, region, wine, grape_variety, inventory, wine_variety
 WHERE winery.region_id = region.region_id
@@ -42,7 +44,8 @@ AND wine.wine_id = wine_variety.wine_id
 AND grape_variety.variety_id = wine_variety.variety_id";
 
 
-if ($winename != "All") {
+
+if (isset($winery) && $winename != "All") {
     $query .= " AND wine_name = '{$winename}'";}
 /*    
 if (isset($winery) && $winery != "All") {
