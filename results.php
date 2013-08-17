@@ -14,7 +14,13 @@ exit;
 }
 echo 'Connected to database ' . DB_NAME . '\n';
 
-$connection = @ mysql_connect(DB_HOST, DB_USER, DB_PW);
+
+
+
+
+</head>
+<body>
+
 
 $winename = $_GET['Wine_Name'];
 $winery = $_GET['Winery_Name'];
@@ -26,11 +32,7 @@ $maxqty = $_GET['Maxqty'];
 $mincost = $_GET['Mincost'];
 $maxcost = $_GET['Maxcost'];
 
-
-</head>
-<body>
-
-echo $winename.$winery.$region.$type.$lowyear.$minqty;
+echo $winename;
 /*
 function showresults {
 
