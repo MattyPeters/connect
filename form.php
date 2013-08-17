@@ -43,67 +43,53 @@ while($row=mysql_fetch_array($region))
 			echo "</select>";
 
 
-
 ?>
 
 <br> Choose Grape Variety <br>         
 <select name="Grape_Type">
 
 <?php
-$type = mysql_query("SELECT variety FROM grape_variety");
+$type = mysql_query("SELECT variety, variety_id FROM grape_variety");
 
 
-while ($typerow = mysql_fetch_array($type)){
-
-?>
-<option value="$typerow['variety']"><?php echo $typerow['variety']; ?></option>
-
-<?php
-
-}
-
+while($typerow=mysql_fetch_array($type))
+			{
+				echo "<option value='$typerow[variety_id]'>'$typerow[variety]'</option>";
+			}
+			echo "</select>";
 
 
 ?>
-
-         </select>
 <br> The range of years <br>         
 <select name="LowerYears">
           <?php
 $lowyear = mysql_query("SELECT distinct year FROM wine group by year asc");
 
 
-while ($lowyearrow = mysql_fetch_array($lowyear)){
+while ($lowyearrow = mysql_fetch_array($lowyear))
 
-?>
-<option value="$typerow['variety']"><?php echo $lowyearrow['year']; ?></option>
 
-<?php
-
-}
-
+			{
+				echo "<option value='$lowyearrow[year]'>'$lowyearrow[year]'</option>";
+			}
+			echo "</select>";
 
 
 ?>
-         </select>
 <select name="Upperyears">
-                    <?php
+
+    <?php
 $highyear = mysql_query("SELECT distinct year FROM wine group by year asc");
 
 
 while ($highyearrow = mysql_fetch_array($highyear)){
 
-?>
-<option value="$typerow['variety']"><?php echo $highyearrow['year']; ?></option>
-
-<?php
-
-}
-
-
+			{
+				echo "<option value='$highyearrow[year]'>'$highyearrow[year]'</option>";
+			}
+			echo "</select>";
 
 ?>
-         </select>
          
 <br> Enter Min Amount of Wines <br>
 <input type="text" name="Minqty" Value = "2">
