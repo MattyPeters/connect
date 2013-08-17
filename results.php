@@ -1,6 +1,19 @@
 <html>
 <head>
-
+<?php
+require_once('db.php');
+if(!$dbconn = mysql_connect(DB_HOST, DB_USER, DB_PW)) {
+echo 'Could not connect to mysql on ' . DB_HOST . '\n';
+exit;
+}
+echo 'Connected to mysql <br />';
+if(!mysql_select_db(DB_NAME, $dbconn)) {
+echo 'Could not user database ' . DB_NAME . '\n';
+echo mysql_error() . '\n';
+exit;
+}
+echo 'Connected to database ' . DB_NAME . '\n';
+?>
 </head>
 <body>
 <?php
@@ -21,12 +34,9 @@ $query = "SELECT wine_name, variety, year, winery_name, region_name, cost, on_ha
 FROM winery, region, wine, grape_variety, inventory, wine_variety
 WHERE winery.region_id = region.region_id
 AND wine.winery_id = winery.winery_id
-/*
 AND wine.wine_id = inventory.wine_id
 AND wine.wine_id = wine_variety.wine_id
-AND grape_variety.variety_id = wine_variety.variety_id
-*/
-";
+AND grape_variety.variety_id = wine_variety.variety_id";
 
 $result = mysql_query($query);
 
