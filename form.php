@@ -32,13 +32,13 @@ echo 'Connected to database ' . DB_NAME . '\n';
 <br> Choose Wine Region <br>
 <select name = "Region">
 <?php
-$region = mysql_query("SELECT region_name, region_id FROM region");
+$region = mysql_query("SELECT region_name FROM region");
 
 
 
 while($row=mysql_fetch_array($region))
 			{
-				echo "<option value=$row[region_id]>$row[region_name]</option>";
+				echo "<option value=$row[region_name]>$row[region_name]</option>";
 			}
 			echo "</select>";
 
@@ -49,12 +49,12 @@ while($row=mysql_fetch_array($region))
 <select name="Grape_Type">
 
 <?php
-$type = mysql_query("SELECT variety, variety_id FROM grape_variety");
+$type = mysql_query("SELECT variety FROM grape_variety");
 
 
 while($typerow=mysql_fetch_array($type))
 			{
-				echo "<option value=$typerow[variety_id]>$typerow[variety]</option>";
+				echo "<option value=$typerow[variety]>$typerow[variety]</option>";
 			}
 			echo "</select>";
 
