@@ -38,7 +38,7 @@ $region = mysql_query("SELECT region_name FROM region");
 while ($row = mysql_fetch_array($region)){
 
 ?>
-<option value="owner1"><?php echo $row['region_name']; ?></option>
+<option value="<php $typerow['region_name'] ?> "><?php echo $row['region_name']; ?></option>
 
 <?php
 
@@ -47,7 +47,7 @@ while ($row = mysql_fetch_array($region)){
 
 
 ?>
-
+</select>
 <br> Choose Grape Variety <br>         
 <select name="Grape_Type">
 
@@ -58,7 +58,7 @@ $type = mysql_query("SELECT variety FROM grape_variety");
 while ($typerow = mysql_fetch_array($type)){
 
 ?>
-<option value="owner1"><?php echo $typerow['variety']; ?></option>
+<option value="$typerow['variety']"><?php echo $typerow['variety']; ?></option>
 
 <?php
 
