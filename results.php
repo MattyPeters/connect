@@ -35,7 +35,7 @@ $maxqty = $_GET['Maxqty'];
 $mincost = $_GET['Mincost'];
 $maxcost = $_GET['Maxcost'];
 
-$query = "SELECT wine_name, variety, year, winery_name, region_name, cost, on_hand, region_id
+$query = "SELECT wine_name, variety, year, winery_name, region_name, region_id, cost, on_hand
 FROM winery, region, wine, grape_variety, inventory, wine_variety
 WHERE winery.region_id = region.region_id
 AND wine.winery_id = winery.winery_id
@@ -52,7 +52,7 @@ if (isset($winery) && $winery != "All") {
     $query .= " AND winery_name = '{$winery}'";}
 
 if (isset($region) && $region != 1) {
-    $query .= " AND region_id == $region";}
+    $query .= " AND region_id == '{$region}'";}
 /*
 if (isset($type) && $type != "All") {
     $query .= " AND variety = '{$type}'";}
