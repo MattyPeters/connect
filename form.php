@@ -70,7 +70,7 @@ while ($lowyearrow = mysql_fetch_array($lowyear))
 
 
 			{
-				echo "<option value='$lowyearrow[year]'>'$lowyearrow[year]'</option>";
+				echo "<option value=$lowyearrow[year]>$lowyearrow[year]</option>";
 			}
 			echo "</select>";
 
@@ -85,7 +85,7 @@ $highyear = mysql_query("SELECT distinct year FROM wine group by year asc");
 while ($highyearrow = mysql_fetch_array($highyear))
 
 			{
-				echo "<option value='$highyearrow[year]'>'$highyearrow[year]'</option>";
+				echo "<option value=$highyearrow[year]>$highyearrow[year]</option>";
 			}
 			echo "</select>";
 
