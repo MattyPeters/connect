@@ -35,14 +35,12 @@ echo 'Connected to database ' . DB_NAME . '\n';
 $region = mysql_query("SELECT region_name FROM region");
 
 
-while ($row = mysql_fetch_array($region)){
 
-?>
-<option value="<?php echo $rows['region_name']; ?>"><?php echo $row['region_name']; ?></option>
-
-<?php
-
-}
+while($row=mysql_fetch_array($region))
+			{
+				echo "<option value='$row[region_id]'>'$row[region_name]'</option>";
+			}
+			echo "</select>";
 
 
 
