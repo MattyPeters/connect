@@ -35,7 +35,7 @@ $maxqty = $_GET['Maxqty'];
 $mincost = $_GET['Mincost'];
 $maxcost = $_GET['Maxcost'];
 
-$query = "SELECT wine_name, variety, year, winery_name, region_id, region_name, cost, on_hand
+$query = "SELECT wine_name, variety, year, winery_name, winery.region_id, region_name, cost, on_hand
 FROM winery, region, wine, grape_variety, inventory, wine_variety
 WHERE winery.region_id = region.region_id
 AND wine.winery_id = winery.winery_id
