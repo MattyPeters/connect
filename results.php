@@ -37,7 +37,7 @@ AND wine.winery_id = winery.winery_id
 AND wine.wine_id = inventory.wine_id
 AND wine.wine_id = wine_variety.wine_id
 AND grape_variety.variety_id = wine_variety.variety_id
-AND wine.wine_name = $winename";
+AND wine_name = '{$winename}'";
 
 $result = mysql_query($query);
 
