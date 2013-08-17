@@ -1,8 +1,21 @@
 <html>
 <head>
 
+</head>
+<body>
 <?php
-function showresults {
+
+$winename = $_GET['WineName'];
+$winery = $_GET['WineryName'];
+$region = $_GET['Region'];
+$type = $_GET['Grape_Type'];
+$lowyear = $_GET['LowerYears'];
+$upyear = $_GET['UpperYears'];
+$minqty = $_GET['Minqty'];
+$maxqty = $_GET['Maxqty'];
+$mincost = $_GET['Mincost'];
+$maxcost = $_GET['Maxcost'];
+
 
 $query = "SELECT wine_name, variety, year, winery_name, region_name, cost, on_hand
 FROM winery, region, wine, grape_variety, inventory, wine_variety
@@ -35,31 +48,10 @@ $result = mysql_query($query);
                "\n\t<td>{$row["region_name"]}</td>" .
                   "\n\t<td>{$row["cost"]}</td>" .
             "\n\t<td>{$row["on_hand"]}</td>\n</tr>";
-      } // end while loop body
+             } // end while loop body
 
       // Finish the <table>
       print "\n</table>";
-
-
-}
-?>
-</head>
-<body>
-<?php
-
-$winename = $_GET['WineName'];
-$winery = $_GET['WineryName'];
-$region = $_GET['Region'];
-$type = $_GET['Grape_Type'];
-$lowyear = $_GET['LowerYears'];
-$upyear = $_GET['UpperYears'];
-$minqty = $_GET['Minqty'];
-$maxqty = $_GET['Maxqty'];
-$mincost = $_GET['Mincost'];
-$maxcost = $_GET['Maxcost'];
-
-
-showresults();
 
 ?>
 
