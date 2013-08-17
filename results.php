@@ -31,7 +31,7 @@ $maxcost = $_GET['Maxcost'];
 
 results();
 
-function results{
+function results(){
 
 $query = "SELECT wine_name, variety, year, winery_name, region_name, cost, on_hand
 FROM winery, region, wine, grape_variety, inventory, wine_variety
