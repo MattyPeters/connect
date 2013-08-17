@@ -43,7 +43,7 @@ AND grape_variety.variety_id = wine_variety.variety_id";
 
 
 if (isset($winename) && $winename != "All") {
-    $query .= " AND wine_name = '{$winename}'";
+    $query .= " AND wine_name = '{$winename}'";}
 /*    
 if (isset($winery) && $winery != "All") {
     $query .= " AND winery_name = '{$winery}'";}
