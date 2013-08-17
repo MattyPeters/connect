@@ -41,7 +41,8 @@ WHERE winery.region_id = region.region_id
 AND wine.winery_id = winery.winery_id
 AND wine.wine_id = inventory.wine_id
 AND wine.wine_id = wine_variety.wine_id
-AND grape_variety.variety_id = wine_variety.variety_id";
+AND grape_variety.variety_id = wine_variety.variety_id
+AND year >= $lowyear";
 
 
 
@@ -56,13 +57,13 @@ if (isset($region) && $region != 1) {
 
 if (isset($type) && $type != 1) {
     $query .= " AND grape_variety.variety_id = $type";}
-
+/*
 if (isset($lowyear))  {
     $query .= " AND year >= $lowyear";}
     
 if (isset($upyear))  {
     $query .= " AND year <= $upyear";}
-/*
+
 if (isset($minqty))  {
     $query .= " AND on_hand >= $minqty";}
     
