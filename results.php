@@ -39,7 +39,7 @@ $result = mysql_query($query);
 
       // Finish the <table>
       print "\n</table>";
-    } // end if $rowsFound body
+
 
 }
 ?>
