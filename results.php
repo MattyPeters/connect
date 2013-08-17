@@ -51,7 +51,7 @@ if (isset($winery) && $winename != "All") {
 if (isset($winery) && $winery != "All") {
     $query .= " AND winery_name = '{$winery}'";}
 
-if (isset($region) $region != "All") {
+if (isset($region) && $region != "All") {
     $query .= " AND region_name = '{$region}'";}
 /*
 if (isset($type) && $type != "All") {
