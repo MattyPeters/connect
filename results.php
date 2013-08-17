@@ -46,7 +46,7 @@ if (isset($winery) && $winery != "All") {
 
 if (isset($region) && $region != "All") {
     $query .= " AND region_name = '{$region}'";}
-
+/*
 if (isset($type) && $type != "All") {
     $query .= " AND variety = '{$type}'";}
 
@@ -68,6 +68,7 @@ if (isset($mincost))  {
 if (isset($maxcost))  {
     $query .= " AND cost <= '{$maxcost}'";}
 
+*/
 $result = mysql_query($query);
 
       print "Wines of $regionName<br>";
