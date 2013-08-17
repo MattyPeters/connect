@@ -24,7 +24,7 @@ echo 'Connected to database ' . DB_NAME . '\n';
 
 
 
-<form action = "#" method= "GET">
+<form action = "results.php" method= "GET">
 <br> Enter a Wine Name <br>
 <input type="text" name="WineName" Value = "All">
 <br> Enter a Winery Name <br>
