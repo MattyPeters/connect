@@ -55,10 +55,10 @@ while ($row = mysql_fetch_array($region)){
 $type = mysql_query("SELECT variety FROM grape_variety");
 
 
-while ($row = mysql_fetch_array($type)){
+while ($typerow = mysql_fetch_array($type)){
 
 ?>
-<option value="owner1"><?php echo $row['region_name']; ?></option>
+<option value="owner1"><?php echo $typerow['variety']; ?></option>
 
 <?php
 
