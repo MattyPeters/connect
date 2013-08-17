@@ -72,13 +72,13 @@ while ($typerow = mysql_fetch_array($type)){
 <br> The range of years <br>         
 <select name="LowerYears">
           <?php
-$year = mysql_query("SELECT distinct year FROM wine group by year asc");
+$lowyear = mysql_query("SELECT distinct year FROM wine group by year asc");
 
 
-while ($yearrow = mysql_fetch_array($year)){
+while ($lowyearrow = mysql_fetch_array($lowyear)){
 
 ?>
-<option value="$typerow['variety']"><?php echo $yearrow['year']; ?></option>
+<option value="$typerow['variety']"><?php echo $lowyearrow['year']; ?></option>
 
 <?php
 
@@ -89,9 +89,22 @@ while ($yearrow = mysql_fetch_array($year)){
 ?>
          </select>
 <select name="Upperyears">
-           <option value="?u">?u
-           <option value="?2u">?2u
-           <option value="?3u">?3u
+                    <?php
+$highyear = mysql_query("SELECT distinct year FROM wine group by year asc");
+
+
+while ($highyearrow = mysql_fetch_array($highyear)){
+
+?>
+<option value="$typerow['variety']"><?php echo $highyearrow['year']; ?></option>
+
+<?php
+
+}
+
+
+
+?>
          </select>
          
 <br> Enter Min Amount of Wines <br>
