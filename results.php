@@ -1,38 +1,30 @@
 <html>
 <head>
-<?php
-require_once('db.php');
-if(!$dbconn = mysql_connect(DB_HOST, DB_USER, DB_PW)) {
-echo 'Could not connect to mysql on ' . DB_HOST . '\n';
-exit;
-}
-echo 'Connected to mysql <br />';
-if(!mysql_select_db(DB_NAME, $dbconn)) {
-echo 'Could not user database ' . DB_NAME . '\n';
-echo mysql_error() . '\n';
-exit;
-}
-echo 'Connected to database ' . DB_NAME . '\n';
-
-
-
 
 
 </head>
 <body>
+<?php
 
+$winename = $_GET['WineName'];
+/*
+$winery = $_GET['WineryName'];
+$region = $_GET['Region'];
 
-$winename = $_GET['Wine_Name'];
-$winery = $_GET['Winery_Name'];
-$region = $_GET['region_id'];
 $type = $_GET['variety_id'];
 $lowyear = $_GET['year'];
 $minqty = $_GET['Minqty'];
 $maxqty = $_GET['Maxqty'];
 $mincost = $_GET['Mincost'];
 $maxcost = $_GET['Maxcost'];
-
+*/
 echo $winename;
+
+?>
+
+</body>
+
+</html>
 /*
 function showresults {
 
@@ -83,6 +75,4 @@ AND wine.winery_id = winery.winery_id";
 
 showresults(
 */
-?>
-</body>
-</html>
+
