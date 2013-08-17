@@ -52,7 +52,7 @@ if (isset($winery) && $winery != "All") {
     $query .= " AND winery_name = '{$winery}'";}
 
 if (isset($region) && $region != 1) {
-    $query .= " AND region_id = $region";}
+    $query .= " AND region_id == $region";}
 /*
 if (isset($type) && $type != "All") {
     $query .= " AND variety = '{$type}'";}
