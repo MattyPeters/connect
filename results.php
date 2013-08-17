@@ -36,8 +36,37 @@ WHERE winery.region_id = region.region_id
 AND wine.winery_id = winery.winery_id
 AND wine.wine_id = inventory.wine_id
 AND wine.wine_id = wine_variety.wine_id
-AND grape_variety.variety_id = wine_variety.variety_id
-AND wine_name = '{$winename}'";
+AND grape_variety.variety_id = wine_variety.variety_id";
+
+if (isset($winename) && $winname != "All") {
+    $query .= " AND wine_name = '{$winename}'";}
+    
+if (isset($winery) && $winery != "All") {
+    $query .= " AND winery_name = '{$winery}'";}
+
+if (isset($region) && $region != "All") {
+    $query .= " AND region_name = '{$region}'";}
+
+if (isset($type) && $type != "All") {
+    $query .= " AND variety = '{$type}'";}
+
+if (isset($lowyear))  {
+    $query .= " AND year >= '{$lowyear}'";}
+    
+if (isset($upyear))  {
+    $query .= " AND year <= '{$upyear}'";}
+    
+if (isset($minqty))  {
+    $query .= " AND on_hand >= '{$minqty}'";}
+    
+if (isset($maxqty))  {
+    $query .= " AND on_hand <= '{$maxqty}'";}
+    
+if (isset($mincost))  {
+    $query .= " AND cost >= '{$mincost}'";}
+    
+if (isset($maxcost))  {
+    $query .= " AND cost <= '{$maxcost}'";}
 
 $result = mysql_query($query);
 
