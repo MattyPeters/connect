@@ -56,24 +56,24 @@ if (isset($region) && $region != 1) {
 
 if (isset($type) && $type != 1) {
     $query .= " AND grape_variety.variety_id = $type";}
-/*
+
 if (isset($lowyear))  {
-    $query .= " AND year >= '{$lowyear}'";}
+    $query .= " AND year >= $lowyear";}
     
 if (isset($upyear))  {
-    $query .= " AND year <= '{$upyear}'";}
+    $query .= " AND year <= $upyear";}
 
 if (isset($minqty))  {
-    $query .= " AND on_hand >= '{$minqty}'";}
+    $query .= " AND on_hand >= $minqty";}
     
 if (isset($maxqty))  {
-    $query .= " AND on_hand <= '{$maxqty}'";}
+    $query .= " AND on_hand <= $maxqty";}
     
 if (isset($mincost))  {
-    $query .= " AND cost >= '{$mincost}'";}
+    $query .= " AND cost >= $mincost";}
     
 if (isset($maxcost))  {
-    $query .= " AND cost <= '{$maxcost}'";}
+    $query .= " AND cost <= $maxcost";}
 
 */
 $result = mysql_query($query);
