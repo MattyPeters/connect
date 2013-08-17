@@ -38,7 +38,7 @@ $region = mysql_query("SELECT region_name FROM region");
 while ($row = mysql_fetch_array($region)){
 
 ?>
-<option value="<php $typerow['region_name'] ?> "><?php echo $row['region_name']; ?></option>
+<option value="<?php echo $rows['region_name']; ?>"><?php echo $row['region_name']; ?></option>
 
 <?php
 
