@@ -62,7 +62,7 @@ if (isset($lowyear))  {
     
 if (isset($upyear))  {
     $query .= " AND year <= $upyear";}
-
+/*
 if (isset($minqty))  {
     $query .= " AND on_hand >= $minqty";}
     
