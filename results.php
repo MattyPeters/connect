@@ -29,7 +29,7 @@ $winery = $_GET['WineryName'];
 $region = $_GET['Region'];
 $type = $_GET['Grape_Type'];
 $lowyear = $_GET['LowerYears'];
-$upyear = $_GET['UpperYears'];
+$upyear = $_GET['Upperyears'];
 $minqty = $_GET['Minqty'];
 $maxqty = $_GET['Maxqty'];
 $mincost = $_GET['Mincost'];
@@ -42,7 +42,7 @@ AND wine.winery_id = winery.winery_id
 AND wine.wine_id = inventory.wine_id
 AND wine.wine_id = wine_variety.wine_id
 AND grape_variety.variety_id = wine_variety.variety_id
-AND wine.year <= $upyear";
+AND wine.year <= $upyear and wine.year >= $lowyear";
 
 
 
