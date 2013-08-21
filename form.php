@@ -22,6 +22,7 @@ function validation (search) {
 var l = search.LowerYears.value;
 var g = search.Upperyears.value;
 
+alert (g);
  if (l >= g) {
  alert("The lower range of years is higher than the higher range");
  return false;
