@@ -18,7 +18,7 @@ echo 'Connected to database ' . DB_NAME . '\n';
 
 <script type="text/javascript">
 function validation (search) {
-
+alert ( "help");
 var l = search.LowerYears.value;
 var g = search.Upperyears.value;
 
