@@ -27,9 +27,9 @@ if ($_GET['LowerYears'] >= $_GET['Upperyears']){
 <body>
 
 
-
+<?php
 validate();
-
+?>
 
 
 <form action = "results.php" method= "GET">
