@@ -13,6 +13,14 @@ echo mysql_error() . '\n';
 exit;
 }
 echo 'Connected to database ' . DB_NAME . '\n';
+
+function validate (){
+
+if (isset['LowerYears'] && isset['Upperyears']){
+if ($_GET['LowerYears'] >= $_GET['Upperyears']){
+	echo "Soz lower higher than higher";
+}}
+}
 ?>
 </head>
 
@@ -20,7 +28,7 @@ echo 'Connected to database ' . DB_NAME . '\n';
 
 
 
-
+validate();
 
 
 
