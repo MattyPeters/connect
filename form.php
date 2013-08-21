@@ -18,8 +18,11 @@ echo 'Connected to database ' . DB_NAME . '\n';
 
 <script type="text/javascript">
 function validation (search) {
-
- if (search.LowerYears.value.length >= search.Upperyears.value.length) {
+var l = document.getElementById("LowerYears");
+var h = document.getElementById("Upperyears");
+var lc = l.options[l.selectedIndex].value;
+var hc = h.options[h.selectedIndex].value;
+ if (lc >= hc) {
  alert("The lower range of years is higher than the higher range");
  return false;
  }
