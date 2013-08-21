@@ -14,25 +14,29 @@ exit;
 }
 echo 'Connected to database ' . DB_NAME . '\n';
 
-function validate (){
-
-
-if ($_GET['LowerYears'] >= $_GET['Upperyears']){
-	print "Soz lower higher than higher";
-}
-}
 ?>
+
+<script type="text/javascript">
+function validation (search) {
+
+ if (search.LowerYears >= search.Upperyears) {
+ alert("The lower range of years is higher than the higher range");
+ return false;
+ }
+ else {
+ return true;
+ }
+}
+</script>
 </head>
 
 <body>
 
 
-<?php
-validate();
-?>
 
 
-<form action = "results.php" method= "GET">
+
+<form name = "search" action = "results.php" method= "GET" onsubmit="return validation(this);>
 <br> Enter a Wine Name <br>
 <input type="text" name="WineName" Value = "All">
 <br> Enter a Winery Name <br>
@@ -112,7 +116,7 @@ while ($highyearrow = mysql_fetch_array($highyear))
 <input type="text" name="Maxcost" Value = "100">
 <br>
 <br>
-<input type="submit" value="Search">
+<input type="submit" name = "button" value="Search">
 
 <php echo "$result"; ?>
 
