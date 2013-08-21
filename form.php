@@ -121,7 +121,7 @@ while ($highyearrow = mysql_fetch_array($highyear))
 <br>
 <input type="submit" name = "button" value="Search">
 
-<php echo "$result"; ?>
+</form>
 
 </body>
 </html>
