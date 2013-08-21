@@ -18,19 +18,27 @@ echo 'Connected to database ' . DB_NAME . '\n';
 
 <script type="text/javascript">
 function validation (search) {
-alert ( "help");
+
 var l = search.LowerYears.value;
 var g = search.Upperyears.value;
+var minq = search.Minqty.value;
+var maxq = search.Maxqty.value;
+var minc = search.Mincost.value;
+var maxc = search.Maxcost.value;
 
-alert (g);
  if (l >= g) {
  alert("The lower range of years is higher than the higher range");
  return false;
  }
- else {
- return true;
+ if (minq >= maxq) {
+ alert("The lower range of qty is higher than the higher range");
+ return false;
  }
-
+ if (minc >= maxc) {
+ alert("The lower range of cost is higher than the higher range");
+ return false;
+ }
+ return true;
 }
 </script>
 </head>
