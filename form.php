@@ -18,17 +18,18 @@ echo 'Connected to database ' . DB_NAME . '\n';
 
 <script type="text/javascript">
 function validation (search) {
-var l = document.getElementById("LowerYears");
-var h = document.getElementById("Upperyears");
-var lc = l.options[l.selectedIndex].value;
-var hc = h.options[h.selectedIndex].value;
- if (lc >= hc) {
+
+var l = search.LowerYears.value;
+var g = search.Upperyears.value;
+
+ if (l >= g) {
  alert("The lower range of years is higher than the higher range");
  return false;
  }
  else {
  return true;
  }
+
 }
 </script>
 </head>
