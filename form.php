@@ -41,7 +41,7 @@ alert (g);
 
 
 
-<form name = "search" action = "results.php" method= "GET" onsubmit="return validation(this);>
+<form name = "search" action = "results.php" method= "GET" onsubmit="return validation(this);">
 <br> Enter a Wine Name <br>
 <input type="text" name="WineName" Value = "All">
 <br> Enter a Winery Name <br>
