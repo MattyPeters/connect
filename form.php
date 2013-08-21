@@ -25,8 +25,7 @@ var minq = search.Minqty.value;
 var maxq = search.Maxqty.value;
 var minc = search.Mincost.value;
 var maxc = search.Maxcost.value;
-alert (minq);
-alert (maxq);
+
  if (l >= g) {
  alert("The lower range of years is higher than the higher range");
  return false;
